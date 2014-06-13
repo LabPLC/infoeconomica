@@ -92,6 +92,10 @@ class IndicadorController extends BaseController {
     	return View::make('lista', array('indicadores'=>$indicadores,'enums'=>$muestreo_enum,"freq_enums"=>$freq_enum));
 	    
     }
+
+    public function lista2() {
+        return "listaaaa";
+    }
     
     /*
     	Ver un indicador

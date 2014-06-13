@@ -11,31 +11,34 @@
 |
 */
 
-// muestra una lista de indicadores en el home
-Route::get('/', 'IndicadorController@lista');
+//home del micrositio
+Route::get('/', array('as'=>'inicio','uses'=>'HomeController@index'));
+Route::get('estudios', array('as'=>'estudios','uses'=>'HomeController@estudios'));
+Route::get('infografias', array('as'=>'infografias','uses'=>'HomeController@infografias'));
 
-// muestra una lista de indicadores en el home
-Route::get('nuevo', function(){
+/*
+	Seccion adminsitrativa
+*/
+
+//inicio
+Route::get('control', array('as'=>'control','uses'=>'IndicadorController@lista'));
+// formulario de nuevo indicador
+Route::get('control/nuevo', function(){
     return View::make('nuevo');
 });
 
 // manda llamar al insertador de indicadores
-Route::post('add', array('uses'=>'IndicadorController@insert'));
-Route::post('add_muestra', 'IndicadorController@insert_muestra');
+Route::post('control/add', array('uses'=>'IndicadorController@insert'));
+Route::post('control/add_muestra', 'IndicadorController@insert_muestra');
 
 //eliminar un indicador
-Route::post('delete', 'IndicadorController@eliminar');
+Route::post('control/delete', 'IndicadorController@eliminar');
 
 //eliminar una muestra
-Route::post('muestra_delete', 'IndicadorController@eliminar_muestra');
+Route::post('control/muestra_delete', 'IndicadorController@eliminar_muestra');
 
 // manda llamar al insertador de indicadores
-Route::get('detalle/{clave}', 'IndicadorController@detalle')->where('clave', '[A-Za-z0-9\_]+');
+Route::get('control/detalle/{clave}', 'IndicadorController@detalle')->where('clave', '[A-Za-z0-9\_]+');
 
 //descarga CSV
-Route::get('descarga/{clave}.csv', 'IndicadorController@descarga')->where('clave', '[A-Za-z0-9\_]+');
-
-Route::get('endpoint-pruebas',function() {
-  Log::info('*** se hizo un pinche request ***: '.Input::get("pollo",'nada'));
-  return "ok";
-});
+Route::get('control/descarga/{clave}.csv', 'IndicadorController@descarga')->where('clave', '[A-Za-z0-9\_]+');

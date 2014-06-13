@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Información Económica</title>
-	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('style-home/bootstrap.css')}}">
 	@yield('style')
 </head>
 <body>

@@ -20,4 +20,22 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
+	public function index() {
+
+		return View::make('home');	
+
+	}
+
+	public function estudios() {
+
+		return View::make('estudios');	
+
+	}
+
+	public function infografias() {
+
+		return View::make('infografias');	
+
+	}
+
 }
