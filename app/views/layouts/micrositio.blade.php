@@ -14,6 +14,7 @@
         <li class="active"><a href="{{route('inicio')}}">Inicio</a></li>
         <li class="active"><a href="{{URL::route('estudios')}}">Estudios y Análisis</a></li>
         <li class="active"><a href="{{route('infografias')}}">Infografías</a></li>
+        <li class="active"><a href="{{route('about')}}">Acerca de</a></li>
   	</ul>
   </div>
 </nav>

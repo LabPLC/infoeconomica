@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.control')
 
 @section('content')
             <div class="content-header">
@@ -50,7 +50,6 @@ $(document).ready(function(){
             evt.preventDefault();
 
             //validaciones
-
             var postData = {
                 clave : $('#clave').val(),
                 nombre : $('#nombre').val(),
@@ -60,11 +59,11 @@ $(document).ready(function(){
 
             //ajax call
             $.ajax({
-                url : '{{url('/')}}/add',
+                url : '{{url('control/almacen')}}',
                 method : 'post',
                 data : postData,
                 success : function(response) {
-                    document.location = '{{url('/')}}'
+                    document.location = '{{url('control/almacen')}}'
                 },
                 error : function() {
                     console.log('Error Ajax');

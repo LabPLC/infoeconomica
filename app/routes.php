@@ -15,20 +15,43 @@
 Route::get('/', array('as'=>'inicio','uses'=>'HomeController@index'));
 Route::get('estudios', array('as'=>'estudios','uses'=>'HomeController@estudios'));
 Route::get('infografias', array('as'=>'infografias','uses'=>'HomeController@infografias'));
+Route::get('acerca-de', array('as'=>'about','uses'=>'HomeController@about'));
+Route::get('logout', function(){
+    return Redirect::to('/');
+});
 
 /*
 	Seccion adminsitrativa
 */
 
 //inicio
-Route::get('control', array('as'=>'control','uses'=>'IndicadorController@lista'));
+Route::get('control', function(){
+    return View::make('control.dashboard');
+});
+
+//### Almacen de Indicadores ### 
+Route::get('control/almacen', array('as'=>'control','uses'=>'IndicadorController@index'));
+Route::get('control/almacen/nuevo', array('uses'=>'IndicadorController@create'));
+Route::get('control/almacen/{clave}', 'IndicadorController@show')->where('clave', '[A-Za-z0-9\_]+');
+Route::post('control/almacen', array('uses'=>'IndicadorController@store'));
+
+//### Estadisticas
+Route::get('control/estadisticas',function(){
+    return View::make('control.estadisticas');
+});
+Route::get('control/estudios', function(){
+    return View::make('control.estudios');
+});
+Route::get('control/infografias', function(){
+    return View::make('control.infografias');
+});
+
 // formulario de nuevo indicador
 Route::get('control/nuevo', function(){
     return View::make('nuevo');
 });
 
-// manda llamar al insertador de indicadores
-Route::post('control/add', array('uses'=>'IndicadorController@insert'));
+
 Route::post('control/add_muestra', 'IndicadorController@insert_muestra');
 
 //eliminar un indicador
@@ -37,8 +60,5 @@ Route::post('control/delete', 'IndicadorController@eliminar');
 //eliminar una muestra
 Route::post('control/muestra_delete', 'IndicadorController@eliminar_muestra');
 
-// manda llamar al insertador de indicadores
-Route::get('control/detalle/{clave}', 'IndicadorController@detalle')->where('clave', '[A-Za-z0-9\_]+');
-
 //descarga CSV
-Route::get('control/descarga/{clave}.csv', 'IndicadorController@descarga')->where('clave', '[A-Za-z0-9\_]+');
+Route::get('descarga/{clave}.csv', 'IndicadorController@descarga')->where('clave', '[A-Za-z0-9\_]+');

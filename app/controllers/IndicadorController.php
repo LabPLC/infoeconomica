@@ -7,19 +7,84 @@
 
 class IndicadorController extends BaseController {
 
+
+    /*
+        Nuevos metodos
+    */
+    
+    public function index() {
+    
+        $muestreo_enum = array("Anual","Mensual","Trimestral", "Semestral", "Diaria");
+        $freq_enum[1]="Ene";
+        $freq_enum[2]="Feb";
+        $freq_enum[3]="Mar";
+        $freq_enum[4]="Abr";
+        $freq_enum[5]="May";
+        $freq_enum[6]="Jun";
+        $freq_enum[7]="Jul";
+        $freq_enum[8]="Ago";
+        $freq_enum[9]="Sep";
+        $freq_enum[10]="Oct";
+        $freq_enum[11]="Nov";
+        $freq_enum[12]="Dic";
+        $freq_enum[301]="Primer trimestre";
+        $freq_enum[302]="Segundo trimestre";
+        $freq_enum[303]="Tercer trimestre";
+        $freq_enum[304]="Cuarto trimestre";
+        $freq_enum[601]="Primer semestre";
+        $freq_enum[602]="Segundo semestre";
+
+        //seleccionar todos y pasarselos al view
+        $indicadores = DB::select("select * from indicadores");
+        return View::make('control.almacen', array('indicadores'=>$indicadores,'enums'=>$muestreo_enum,"freq_enums"=>$freq_enum));
+        
+    }
+
+    public function show($clave)
+    {
+        $indicadores = DB::table('indicadores')->where('clave','=',$clave)->get();
+        $muestreo_enum = array("Anual","Mensual","Trimestral", "Semestral", "Diaria");
+
+        $freq_enum[0]="";
+        $freq_enum[1]="Ene";
+        $freq_enum[2]="Feb";
+        $freq_enum[3]="Mar";
+        $freq_enum[4]="Abr";
+        $freq_enum[5]="May";
+        $freq_enum[6]="Jun";
+        $freq_enum[7]="Jul";
+        $freq_enum[8]="Ago";
+        $freq_enum[9]="Sep";
+        $freq_enum[10]="Oct";
+        $freq_enum[11]="Nov";
+        $freq_enum[12]="Dic";
+        $freq_enum[301]="Primer trimestre";
+        $freq_enum[302]="Segundo trimestre";
+        $freq_enum[303]="Tercer trimestre";
+        $freq_enum[304]="Cuarto trimestre";
+        $freq_enum[601]="Primer semestre";
+        $freq_enum[602]="Segundo semestre";
+        
+        //dd($indicadores);
+        //solo queremos el primero
+        $indicador = $indicadores[0];
+
+        //muestras de este indicador
+        $muestras = DB::table('muestras')->where('id_indicador','=',$indicador->id)->orderBy('anio','desc')->orderBy('mes','desc')->get();
+        
+        return View::make('control.indicador',array('indicador'=>$indicador,'muestras'=>$muestras,"freq_enums"=>$freq_enum));
+        
+    }
 	/*
 		inserta un nuevo indicador a la lista
 	*/
-    public function insert() {
+
+    public function create() {
+        return View::make('control.nuevo_indicador');
+    }
     
-	    //checar auth, si no, 0
-	    //if(!Auth::check())
-	    	//die('0');
-	    
+    public function store() {
 	    $input = Input::all();
-	    
-	    //die(Input::get('dato'));
-    	
     	//iserta y recupera el ID del indicador
     	$id = DB::table('indicadores')->insertGetId(
 			array(
@@ -28,10 +93,9 @@ class IndicadorController extends BaseController {
 			'descripcion'=>$input['descripcion'],
 			'frecuencia_muestreo'=> $input['fm'])
 		);
-		
 		return $id;
-    
     }
+
     public function insert_muestra() {
 
         //validar inputs
@@ -61,78 +125,7 @@ class IndicadorController extends BaseController {
 
     }
     
-    /*
-    	Muestra la lista de indicadores
-    */
-    
-    public function lista() {
-    
-    	$muestreo_enum = array("Anual","Mensual","Trimestral", "Semestral", "Diaria");
-        $freq_enum[1]="Ene";
-        $freq_enum[2]="Feb";
-        $freq_enum[3]="Mar";
-        $freq_enum[4]="Abr";
-        $freq_enum[5]="May";
-        $freq_enum[6]="Jun";
-        $freq_enum[7]="Jul";
-        $freq_enum[8]="Ago";
-        $freq_enum[9]="Sep";
-        $freq_enum[10]="Oct";
-        $freq_enum[11]="Nov";
-        $freq_enum[12]="Dic";
-        $freq_enum[301]="Primer trimestre";
-        $freq_enum[302]="Segundo trimestre";
-        $freq_enum[303]="Tercer trimestre";
-        $freq_enum[304]="Cuarto trimestre";
-        $freq_enum[601]="Primer semestre";
-        $freq_enum[602]="Segundo semestre";
 
-    	//seleccionar todos y pasarselos al view
-    	$indicadores = DB::select("select * from indicadores");
-    	return View::make('lista', array('indicadores'=>$indicadores,'enums'=>$muestreo_enum,"freq_enums"=>$freq_enum));
-	    
-    }
-
-    public function lista2() {
-        return "listaaaa";
-    }
-    
-    /*
-    	Ver un indicador
-    */
-    public function detalle($clave) {
-    	$indicadores = DB::table('indicadores')->where('clave','=',$clave)->get();
-        $muestreo_enum = array("Anual","Mensual","Trimestral", "Semestral", "Diaria");
-
-        $freq_enum[0]="";
-        $freq_enum[1]="Ene";
-        $freq_enum[2]="Feb";
-        $freq_enum[3]="Mar";
-        $freq_enum[4]="Abr";
-        $freq_enum[5]="May";
-        $freq_enum[6]="Jun";
-        $freq_enum[7]="Jul";
-        $freq_enum[8]="Ago";
-        $freq_enum[9]="Sep";
-        $freq_enum[10]="Oct";
-        $freq_enum[11]="Nov";
-        $freq_enum[12]="Dic";
-        $freq_enum[301]="Primer trimestre";
-        $freq_enum[302]="Segundo trimestre";
-        $freq_enum[303]="Tercer trimestre";
-        $freq_enum[304]="Cuarto trimestre";
-        $freq_enum[601]="Primer semestre";
-        $freq_enum[602]="Segundo semestre";
-		
-		//dd($indicadores);
-		//solo queremos el primero
-		$indicador = $indicadores[0];
-
-        //muestras de este indicador
-        $muestras = DB::table('muestras')->where('id_indicador','=',$indicador->id)->orderBy('anio','desc')->orderBy('mes','desc')->get();
-		
-	    return View::make('indicador',array('indicador'=>$indicador,'muestras'=>$muestras,"freq_enums"=>$freq_enum));
-    }
 
     // eliminar un indicador, incluyendo todas sus muestras
     public function eliminar() {

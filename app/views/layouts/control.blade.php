@@ -32,8 +32,10 @@
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">infoeconomica.mx</li>
-                <li><a href="<?php print(url('/')); ?>">Indicadores y Estadisticas</a></li>
-                <li><a href="<?php print(url('/')); ?>">Publicaciones</a></li>
+                <li><a href="<?php print(url('control/almacen')); ?>">Almacen de Indicadores</a></li>
+                <li><a href="<?php print(url('control/estadisticas')); ?>">Estadisticas</a></li>
+                <li><a href="<?php print(url('control/estudios')); ?>">Estudios y Analisis</a></li>
+                <li><a href="<?php print(url('control/infografias')); ?>">Infografias</a></li>
                 <li><a href="<?php print(url('logout'));?>">Salir</a></li>
             </ul>
         </div>
@@ -46,7 +48,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="<?php print(url('/')); ?>/js/jquery-1.7.2.min.js"></script>
+    <script src="<?php print(url('/')); ?>/js/jquery.js"></script>
     <script src="<?php print(url('/')); ?>/js/bootstrap.js"></script>
     <script src="<?php print(url('/')); ?>/js/app.js"></script>
     @yield('extra-script')

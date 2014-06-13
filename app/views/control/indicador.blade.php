@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.control')
 
 @section('content')
             <div class="content-header">

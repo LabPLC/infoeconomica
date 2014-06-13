@@ -1,9 +1,9 @@
-@extends('layouts.master')
+@extends('layouts.control')
 
 @section('content')
             <div class="content-header">
                 <h1>
-                    Indicadores
+                    Almacen de Indicadores
                 </h1>
             </div>
             <!-- Keep all page content within the page-content inset div! -->
@@ -26,7 +26,7 @@
 	                        foreach($indicadores as $indicador) {
 	                        ?>
 		                        <tr>
-			                        <td><a href="<?php print(url('detalle/'.$indicador->clave));?>"><?php print($indicador->clave);?></td></td>
+			                        <td><a href="<?php print(url('control/almacen/'.$indicador->clave));?>"><?php print($indicador->clave);?></td></td>
 			                        <td><?php print($indicador->nombre);?></td>
 			                        <td><?php print($indicador->descripcion);?></td>
 			                        <td><?php print($enums[$indicador->frecuencia_muestreo]);?></td>
@@ -44,6 +44,7 @@
 		                    ?>
 	                        </tbody>
                         </table>
+                        <a class="btn btn-medium btn-success" href="{{url('control/almacen/nuevo')}}"><span class="glyphicon glyphicon-plus-sign"></span> Nuevo indicador</a>
                     </div>
                 </div>
             </div>
