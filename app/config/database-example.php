@@ -66,9 +66,9 @@ return array(
 		'pgsql' => array(
 			'driver'   => 'pgsql',
 			'host'     => 'localhost',
-			'database' => 'indicadores',
-			'username' => '',
-			'password' => '',
+			'database' => 'infoeconomica',
+			'username' => 'usuario',
+			'password' => 'password',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 			'schema'   => 'public',
