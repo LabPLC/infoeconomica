@@ -42,9 +42,13 @@ Route::get('control/estadisticas',function(){
 Route::get('control/estudios', function(){
     return View::make('control.estudios');
 });
-Route::get('control/infografias', function(){
-    return View::make('control.infografias');
-});
+
+//## infografias
+Route::get('control/infografias', array('uses'=>'InfografiasController@index'));
+Route::get('control/infografias/nuevo', array('uses'=>'InfografiasController@create'));
+Route::post('control/infografias', array('uses'=>'InfografiasController@store'));
+Route::delete('control/infografias/{id}', array('uses'=>'InfografiasController@destroy'))->where('id','[0-9]+');
+
 
 // formulario de nuevo indicador
 Route::get('control/nuevo', function(){

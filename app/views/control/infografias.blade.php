@@ -10,7 +10,34 @@
             <div class="page-content inset">
                 <div class="row">
                     <div class="col-md-12">
-                        Aqui va la lista
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Titulo</th>
+                                    <th>Descripci&oacute;n</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach($infografias as $infografia) {
+                            ?>
+                                <tr>
+                                    <td>{{$infografia->titulo}}</td>
+                                    <td>{{$infografia->descripcion}}</td>
+                                    <td><a href="#" target="_new" class="ver btn btn-primary btn-xs">
+                                        <span class="glyphicon glyphicon-eye-open"></span> Ver</a>
+                                        <a href="#" data="{{$infografia->id}}" class="eliminar btn btn-danger btn-xs">
+                                        <span class="glyphicon glyphicon-remove"></span> Eliminar</a>
+                                    </td>
+                                </tr>
+                            <?php
+                            }// end foreach #####
+                            ?>
+                            </tbody>
+                        </table>
+                        <a class="btn btn-medium btn-success" href="{{url('control/infografias/nuevo')}}">
+                        <span class="glyphicon glyphicon-plus-sign"></span> Nueva infograf&iacute;a</a>
                     </div>
                 </div>
             </div>
@@ -18,9 +45,24 @@
 
 @section('extra-script')
 <script language="JavaScript">
+function destroy(id) {
+    $.ajax({
+        url : '{{url('control/infografias')}}/'+id,
+        method : 'delete',
+        success : function(response) {
+            document.location = '{{url('control/infografias')}}'
+        },
+        error : function() {
+            console.log('Error Ajax');
+        }
+    });
+}
 //jquery todo
 $(document).ready(function(){
-
+    $('.eliminar').click(function(e) {
+        e.preventDefault();
+        destroy($(this).attr('data'));
+    })
 });
 </script>
 @stop
