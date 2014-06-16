@@ -36,4 +36,33 @@ class HomeController extends BaseController {
 		return View::make('about');
 	}
 
+	/*
+		Login / Logout
+	*/
+
+	public function login_form() {
+		return View::make('control.login');
+	}
+
+	public function login() {
+
+		//traer las credenciales
+		$username = Input::get('user');
+		$password = Input::get('pass');
+
+		if (Auth::attempt(array('username' => $username, 'password' => $password))) {
+    		return Redirect::intended('control');
+		} else {
+			return Redirect::to('control/login');
+		}
+	}
+
+	public function logout() {
+		//return View::make('control.login');
+		Auth::logout();
+		return Redirect::to('control/login');
+	}
+
+
+
 }

@@ -37,7 +37,7 @@
                 <li><a href="<?php print(url('control/estadisticas')); ?>">Estadisticas</a></li>
                 <li><a href="<?php print(url('control/estudios')); ?>">Estudios y Analisis</a></li>
                 <li><a href="<?php print(url('control/infografias')); ?>">Infografias</a></li>
-                <li><a href="<?php print(url('logout'));?>">Salir</a></li>
+                <li><a href="<?php print(url('control/logout'));?>">Salir</a></li>
             </ul>
         </div>
 
