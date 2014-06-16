@@ -42,9 +42,10 @@ class InfografiasController extends \BaseController {
 			return 'No file.';
 		}
 
+		//nuevo archivo
 		$now = Carbon::now();
 		$code = $now->timestamp;
-		$file = $code . Input::file('Filedata')->getClientOriginalExtension();
+		$file = $code . '.' . Input::file('Filedata')->getClientOriginalExtension();
 		if( Input::file('Filedata')->move( storage_path().'/files', $file)) {
 
 			$nueva = new Post;
