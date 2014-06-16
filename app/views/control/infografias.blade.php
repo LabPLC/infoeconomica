@@ -15,6 +15,7 @@
                                 <tr>
                                     <th>Titulo</th>
                                     <th>Descripci&oacute;n</th>
+                                    <th>Categor&iacute;a</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -25,6 +26,7 @@
                                 <tr>
                                     <td>{{$infografia->titulo}}</td>
                                     <td>{{$infografia->descripcion}}</td>
+                                    <td>{{$infografia->categoria}}</td>
                                     <td><a href="#" target="_new" class="ver btn btn-primary btn-xs">
                                         <span class="glyphicon glyphicon-eye-open"></span> Ver</a>
                                         <a href="#" data="{{$infografia->id}}" class="eliminar btn btn-danger btn-xs">
@@ -46,16 +48,19 @@
 @section('extra-script')
 <script language="JavaScript">
 function destroy(id) {
-    $.ajax({
-        url : '{{url('control/infografias')}}/'+id,
-        method : 'delete',
-        success : function(response) {
-            document.location = '{{url('control/infografias')}}'
-        },
-        error : function() {
-            console.log('Error Ajax');
-        }
-    });
+    var opt = confirm('÷Deseas eliminar la infografía seleccionada?');
+    if(opt) {
+        $.ajax({
+            url : '{{url('control/infografias')}}/'+id,
+            method : 'delete',
+            success : function(response) {
+                document.location = '{{url('control/infografias')}}'
+            },
+            error : function() {
+                console.log('Error Ajax');
+            }
+        });
+    }
 }
 //jquery todo
 $(document).ready(function(){

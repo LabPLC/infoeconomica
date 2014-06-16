@@ -7,7 +7,8 @@
 		"ext-mbstring":"*",
 		"laravel/framework": "4.2.*",
 		"goodby/csv": "dev-master",
-		"way/generators": "dev-master"
+		"way/generators": "dev-master",
+		"nesbot/carbon": "*"
 	},
     "require-dev": {
         "way/generators": "dev-master",

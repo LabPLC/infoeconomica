@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration {
 			$table->increments('id');
 			$table->string('titulo');
 			$table->integer('tipo');
+			$table->integer('categoria');
 			$table->datetime('fecha_publicacion');
 			$table->text('attachment');
 			$table->text('imagen');

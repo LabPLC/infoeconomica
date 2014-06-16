@@ -14,6 +14,7 @@
 
     <!-- Add custom CSS here -->
     <link href="<?php print(url('css')); ?>/simple-sidebar.css" rel="stylesheet">
+    <link href="<?php print(url('css')); ?>/uploadifive.css" rel="stylesheet">
     <link href="<?php print(url('font-awesome')); ?>/css/font-awesome.min.css" rel="stylesheet">
 
     <style type="text/css">

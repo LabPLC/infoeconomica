@@ -1,5 +1,7 @@
 <?php
 
+use Carbon\Carbon;
+
 class InfografiasController extends \BaseController {
 
 	/**
@@ -35,18 +37,32 @@ class InfografiasController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
-		$nueva = new Post;
-		$nueva->titulo = Input::get('titulo');
-		$nueva->tipo = 2;
-		$nueva->fecha_publicacion = '2014-11-11';
-		$nueva->attachment = '';
-		$nueva->imagen = '';
-		$nueva->subtitulo = '';
-		$nueva->descripcion = Input::get('descripcion');
-		$nueva->save();
+		//check for a file
+		if(!Input::hasFile('Filedata')) {
+			return 'No file.';
+		}
 
-		return '1';
+		$now = Carbon::now();
+		$code = $now->timestamp;
+		$file = $code . Input::file('Filedata')->getClientOriginalExtension();
+		if( Input::file('Filedata')->move( storage_path().'/files', $file)) {
+
+			$nueva = new Post;
+			$nueva->titulo = Input::get('titulo');
+			$nueva->tipo = 2;
+			$nueva->categoria = 1;
+			$nueva->fecha_publicacion = Carbon::now();
+			$nueva->attachment = $file;
+			$nueva->imagen = '';
+			$nueva->subtitulo = '';
+			$nueva->descripcion = Input::get('descripcion');
+			$nueva->save();
+
+			return '1';
+
+		} else {
+			return 'Invalid file type.';
+		}
 	}
 
 	/**
