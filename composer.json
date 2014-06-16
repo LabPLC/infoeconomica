@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"goodby/csv": "dev-master",
 		"way/generators": "dev-master",
-		"nesbot/carbon": "*"
+		"nesbot/carbon": "*",
+		"intervention/image": "2.*"
 	},
     "require-dev": {
         "way/generators": "dev-master",

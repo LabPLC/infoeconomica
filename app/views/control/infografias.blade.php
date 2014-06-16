@@ -27,7 +27,7 @@
                                     <td>{{$infografia->titulo}}</td>
                                     <td>{{$infografia->descripcion}}</td>
                                     <td>{{$infografia->categoria}}</td>
-                                    <td><a href="#" target="_new" class="ver btn btn-primary btn-xs">
+                                    <td><a href="{{url('infografias/'.$infografia->id)}}" target="_new" class="ver btn btn-primary btn-xs">
                                         <span class="glyphicon glyphicon-eye-open"></span> Ver</a>
                                         <a href="#" data="{{$infografia->id}}" class="eliminar btn btn-danger btn-xs">
                                         <span class="glyphicon glyphicon-remove"></span> Eliminar</a>
@@ -48,7 +48,7 @@
 @section('extra-script')
 <script language="JavaScript">
 function destroy(id) {
-    var opt = confirm('÷Deseas eliminar la infografía seleccionada?');
+    var opt = confirm('¿Deseas eliminar la infografía seleccionada?');
     if(opt) {
         $.ajax({
             url : '{{url('control/infografias')}}/'+id,

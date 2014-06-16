@@ -10,14 +10,16 @@
             <div class="page-content inset">
                 <div class="row">
                     <div class="col-md-6">
-                        <form role="form">
+                        <form id="info-form" role="form" data-parsley-validate>
                             <div class="form-group">
                                 <label for="titulo">Titulo</label>
-                                <input type="text" class="form-control" id="titulo" placeholder="Ej. La realidad economica del DF">
+                                <input type="text" class="form-control" id="titulo" placeholder="Ej. La realidad economica del DF" 
+                                data-parsley-minlength="6" required>
                             </div>
                             <div class="form-group">
                                 <label for="descripcion">Descripcion</label>
-                                <input type="text" class="form-control" id="descripcion" placeholder="">
+                                <input type="text" class="form-control" id="descripcion" placeholder="" 
+                                data-parsley-minlength="6" required>
                             </div>
                             <div class="form-group">
                                 <label for="file_upload">Archivo</label>
@@ -34,6 +36,7 @@
 
 @section('extra-script')
 <script src="{{asset('js/jquery.uploadifive.min.js')}}"></script>
+<script src="{{asset('js/parsley.min.js')}}"></script>
 <script language="JavaScript">
 $(document).ready(function() {
     var postData;
@@ -52,11 +55,15 @@ $(document).ready(function() {
     $("#guardar").click(function(evt){
         evt.preventDefault();
         //validaciones
-        $('#file_upload').data('uploadifive').settings.formData = {
+        if($('#info-form').parsley().validate()) {
+
+            $('#file_upload').data('uploadifive').settings.formData = {
                 'titulo' : $('#titulo').val(),
                 'descripcion' : $('#descripcion').val()
             };
-        $('#file_upload').uploadifive('upload');            
+            $('#file_upload').uploadifive('upload');  
+        }
+          
     });
 
 });

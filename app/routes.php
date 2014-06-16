@@ -14,11 +14,13 @@
 //home del micrositio
 Route::get('/', array('as'=>'inicio','uses'=>'HomeController@index'));
 Route::get('estudios', array('as'=>'estudios','uses'=>'HomeController@estudios'));
-Route::get('infografias', array('as'=>'infografias','uses'=>'HomeController@infografias'));
+Route::get('infografias', array('as'=>'infografias','uses'=>'InfografiasController@index_home'));
+Route::get('infografias/{id}', array('uses'=>'InfografiasController@show'))->where('id','[0-9]+');
 Route::get('acerca-de', array('as'=>'about','uses'=>'HomeController@about'));
 Route::get('logout', function(){
     return Redirect::to('/');
 });
+
 
 /*
 	Seccion adminsitrativa

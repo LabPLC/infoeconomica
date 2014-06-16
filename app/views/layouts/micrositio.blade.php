@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Información Económica</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('style-home/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('style-home/main.css')}}">
 	@yield('style')
 </head>
 <body>

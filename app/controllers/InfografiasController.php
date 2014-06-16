@@ -17,6 +17,11 @@ class InfografiasController extends \BaseController {
 		return View::make('control.infografias',array('infografias'=>$infografias));
 	}
 
+	public function index_home() {
+		$infografias = Post::where('tipo',2)->get();
+		return View::make('infografias', array('infografias'=>$infografias));
+	}
+
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /infografias/create
@@ -46,7 +51,20 @@ class InfografiasController extends \BaseController {
 		$now = Carbon::now();
 		$code = $now->timestamp;
 		$file = $code . '.' . Input::file('Filedata')->getClientOriginalExtension();
-		if( Input::file('Filedata')->move( storage_path().'/files', $file)) {
+		$fulsize = 'full_'.$code . '.' . Input::file('Filedata')->getClientOriginalExtension();
+		if( Input::file('Filedata')->move( public_path().'/media', $fulsize)) {
+
+			//resize the fucking image
+			$img = Image::make(public_path().'/media/'.$fulsize);
+
+			//checar si el tamaño original es muy grande
+			if($img->width() > 1000) {
+				// resize the image to a width of 300 and constrain aspect ratio (auto height)
+				$img->resize(1000, null, function ($constraint) {
+				    $constraint->aspectRatio();
+				});
+				$img->save(public_path().'/media/'.$file,100);
+			}
 
 			$nueva = new Post;
 			$nueva->titulo = Input::get('titulo');
@@ -76,6 +94,8 @@ class InfografiasController extends \BaseController {
 	public function show($id)
 	{
 		//
+		$infografia = Post::find($id);
+		return View::make('infografia',array('infografia'=>$infografia));
 	}
 
 	/**
@@ -111,8 +131,11 @@ class InfografiasController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		//ubicar el post
 		$cual = Post::find($id);
+		//eliminar el archivo
+		File::delete(public_path().'/media/'.$cual->attachment);
+		File::delete(public_path().'/media/full_'.$cual->attachment);
 		$cual->delete();
 		return '1';
 	}

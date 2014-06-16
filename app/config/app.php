@@ -107,6 +107,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Way\Generators\GeneratorsServiceProvider',
+        'Intervention\Image\ImageServiceProvider',
 	),
 
 	/*
@@ -177,6 +178,7 @@ return array(
 		'LexerConfig' =>     'Goodby\CSV\Import\Standard\LexerConfig',
 		'Exporter' => 'Goodby\CSV\Export\Standard\Exporter',
 		'ExporterConfig' => 'Goodby\CSV\Export\Standard\ExporterConfig',
+		'Image' => 'Intervention\Image\Facades\Image',
 
 	),
 
