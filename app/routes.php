@@ -13,7 +13,7 @@
 
 //home del micrositio
 Route::get('/', array('as'=>'inicio','uses'=>'HomeController@index'));
-Route::get('estudios', array('as'=>'estudios','uses'=>'HomeController@estudios'));
+Route::get('estudios', array('as'=>'estudios','uses'=>'EstudiosController@index_home'));
 Route::get('infografias', array('as'=>'infografias','uses'=>'InfografiasController@index_home'));
 Route::get('infografias/{id}', array('uses'=>'InfografiasController@show'))->where('id','[0-9]+');
 Route::get('acerca-de', array('as'=>'about','uses'=>'HomeController@about'));
@@ -41,9 +41,12 @@ Route::post('control/almacen', array('uses'=>'IndicadorController@store'));
 Route::get('control/estadisticas',function(){
     return View::make('control.estadisticas');
 });
-Route::get('control/estudios', function(){
-    return View::make('control.estudios');
-});
+
+//## estudios
+Route::get('control/estudios', array('uses'=>'EstudiosController@index'));
+Route::get('control/estudios/nuevo', array('uses'=>'EstudiosController@create'));
+Route::post('control/estudios', array('uses'=>'EstudiosController@store'));
+Route::delete('control/estudios/{id}', array('uses'=>'EstudiosController@destroy'))->where('id','[0-9]+');
 
 //## infografias
 Route::get('control/infografias', array('uses'=>'InfografiasController@index'));
