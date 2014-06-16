@@ -19,7 +19,7 @@ class CreateMuestrasTable extends Migration {
             $table->integer('anio');
             $table->integer('mes');
             $table->integer('dia');
-            $table->decimal('valor');
+            $table->double('valor');
 			//$table->timestamps();
 		});
 	}

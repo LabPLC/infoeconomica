@@ -41,6 +41,7 @@
                         </form>
                     </div>
                 </div>
+                <a href="{{url('/')}}">Inicio</a>
             </div>
         </div>
     </div>

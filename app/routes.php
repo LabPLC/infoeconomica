@@ -57,6 +57,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('control/almacen/nuevo', array('uses'=>'IndicadorController@create'));
 	Route::get('control/almacen/{clave}', 'IndicadorController@show')->where('clave', '[A-Za-z0-9\_]+');
 	Route::post('control/almacen', array('uses'=>'IndicadorController@store'));
+	Route::post('control/almacen/muestras', 'IndicadorController@insert_muestra');
 
 	//### Estadisticas
 	Route::get('control/estadisticas',function(){
@@ -76,7 +77,7 @@ Route::group(array('before' => 'auth'), function()
 	Route::delete('control/infografias/{id}', array('uses'=>'InfografiasController@destroy'))->where('id','[0-9]+');
 
 
-	Route::post('control/add_muestra', 'IndicadorController@insert_muestra');
+	
 
 	//eliminar un indicador
 	Route::post('control/delete', 'IndicadorController@eliminar');

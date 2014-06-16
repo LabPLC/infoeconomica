@@ -60,9 +60,7 @@
 	<h2 class="text-center">Acerca de</h2>
 </div>
 
-<div class="row footer">
-	
-</div>
+
 @endsection
 
 

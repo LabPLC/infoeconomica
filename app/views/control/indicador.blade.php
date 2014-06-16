@@ -204,7 +204,7 @@ $(document).ready(function(){
 
             //ajax call
             $.ajax({
-                url : '{{url('/')}}/add_muestra',
+                url : '{{url('control/almacen/muestras')}}',
                 method : 'post',
                 data : postData,
                 success : function(response) {

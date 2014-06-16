@@ -1,4 +1,139 @@
+#eco .info {
+		background-color: #4775A3;
+	}
+	#demo .info {
+		background-color: #336699;
+	}
+	#mas .info {
+		background-color: #5C85AD;
+	}
+	.info {
+		height: 180px;
+	}
+	.arriba-1 {
+		padding: 10px;
+	}
+	.headersote{
+		height: 120px;
+	}
+	.bajar {
+		background-color: #3CB371;
+		padding: 10px 0px 10px 15px;
+	}
+	.bajar h4 {;
+		color: #fff;
+	}
+	.footer {
+		height: 200px;
+	}
+	.row-spacer {
+		margin-bottom: 35px;
+	}
+	.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+.nav-tabs, .nav-pills {
+    text-align:center;
+}
+.tab-content {
+	padding: 20px 0 20px 0;
+}
+
+
+/*
+para el estilo del item
+*/
+.post-item{
+	background-color: #3b8dbd;
+	position: relative;
+	margin-bottom: 30px;
+	overflow: hidden;
+}
+.post-item .detalle {
+	padding: 15px;
+}
+.post-item .detalle p {
+	font-size: 12px;
+	color: #fff;
+}
+.post-item .detalle h4 {
+	color: #fff;
+}
+
+.post-item .overlay {
+	display: none;
+	font-size: 25pt;
+	z-index: 999;
+	background-color: #82b964;
+	position: absolute;
+	top:0; left: 0;
+	width: 304px;
+	height: 304px;
+}
+.post-item .detalle-estudios {
+	padding: 18px;
+}
+.post-item .detalle-estudios h4 {
+	color: #fff;
+}
+.post-item .overlay-estudios {
+	display: none;
+	font-size: 25pt;
+	z-index: 999;
+	background-color: #82b964;
+	position: absolute;
+	top:0; left: 0;
+	width: 304px;
+	height: 100px;
+}
+.post-item .overlay-estudios .ver {
+	position: absolute;
+	top:10px;
+	left:130px;
+	font-size: 40pt;
+	color: #fff;
+}
+.post-item .overlay-estudios .ver:hover {
+	color: #eee;
+}
+
+.post-item .overlay .ver {
+	position: absolute;
+	top:130px;
+	left:130px;
+	font-size: 40pt;
+	color: #fff;
+}
+.post-item .overlay .ver:hover {
+	color: #eee;
+}
 .container {
 	width: 1000px;
 	max-width: 1000px;
+}
+
+.navbar-brand {
+	font-size: 20px;
+}
+
+.container-fluid {
+	padding-left: 0px;
+}
+
+.titulo {
+	padding-top:5px;
+	padding-bottom: 25px;
+	border-bottom: 1px solid #eee;
+}
+
+.footer-content {
+	margin-top: 40px;
+	border-top: 1px solid #eee;
+}
+.footer-info {
+	padding: 25px;
+	font-size: 10px;
 }

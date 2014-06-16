@@ -52,6 +52,7 @@ class InfografiasController extends \BaseController {
 		$code = $now->timestamp;
 		$file = $code . '.' . Input::file('Filedata')->getClientOriginalExtension();
 		$fulsize = 'full_'.$code . '.' . Input::file('Filedata')->getClientOriginalExtension();
+		$thumb = 'thumb_'.$code . '.' . Input::file('Filedata')->getClientOriginalExtension();
 		if( Input::file('Filedata')->move( public_path().'/media', $fulsize)) {
 
 			//resize the fucking image
@@ -65,6 +66,12 @@ class InfografiasController extends \BaseController {
 				});
 				$img->save(public_path().'/media/'.$file,100);
 			}
+
+			//thumbnail
+			$img = Image::make(public_path().'/media/'.$fulsize);
+			$img->fit(301);
+			$img->save(public_path().'/media/'.$thumb);
+
 
 			$nueva = new Post;
 			$nueva->titulo = Input::get('titulo');
@@ -136,6 +143,7 @@ class InfografiasController extends \BaseController {
 		//eliminar el archivo
 		File::delete(public_path().'/media/'.$cual->attachment);
 		File::delete(public_path().'/media/full_'.$cual->attachment);
+		File::delete(public_path().'/media/thumb'.$cual->attachment);
 		$cual->delete();
 		return '1';
 	}
