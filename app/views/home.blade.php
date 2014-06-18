@@ -10,7 +10,7 @@
 <div class="row row-spacer">
 	<h3 class="text-center">Estadísticas de la Ciudad de México</h3>
 </div>
-<div class="row row-spacer">
+<div class="row">
 	<div class="col-md-12">
 		<div id="tab-indicadores">
 		<!-- Nav tabs -->
@@ -33,36 +33,29 @@
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">Población Economicamente Activa</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h4 class="text-center">4,414,063</h4>
+						<p class="text-center">2013 - INEGI</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Población Ocupada en el DF</h5>
+						<h4 class="text-center">4,142,343</h4>
+						<p class="text-center">2013 - INEGI</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Indice de Desarrollo Humano</h5>
+						<h4 class="text-center">0.91</h4>
+						<p class="text-center">Promedio, 2010 - PNUD</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
-					</div>
-				</div>
-				<div class="col-md-4 arriba-1">
-					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">ITPL</h5>
+						<h4 class="text-center">1.22</h4>
+						<p class="text-center">2013 - CONEVAL</p>
 					</div>
 				</div>
 		  	</div>
@@ -71,44 +64,38 @@
 		  	<div class="row">
 		  		<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Producto Interno Bruto</h5>
+						<h4 class="text-center">2.2</h4>
+						<p class="text-center">2012 - INEGI</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Formación Bruta de Capital Fijo</h5>
+						<h4 class="text-center">106,472,653</h4>
+						<p class="text-center">2009 - INEGI</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Exportaciones Totales</h5>
+						<h4 class="text-center">2,982,812</h4>
+						<p class="text-center">2012 - INEGI</p>
+					</div>
+				</div>
+				<div class="col-md-4 arriba-1">
+					<div class="info-trans">
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Unidades Económicas</h5>
+						<h4 class="text-center">428,756</h4>
+						<p class="text-center">2013 - INEGI</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
-					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
-					</div>
-				</div>
-				<div class="col-md-4 arriba-1">
-					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+					<div class="info-trans">
 					</div>
 				</div>
 		  	</div>
@@ -118,6 +105,9 @@
 
 	</div>
 </div>
+<div class="row spacer-2x">
+	<a class="btn btn-hg btn-embossed btn-primary col-md-12" href="#">Descargar todos los datos</a>
+</div>
 <div class="row">
 	<div class="col-md-6 arriba-1">
 		<div class="bajar">
@@ -126,8 +116,7 @@
 		@foreach($estudios as $estudio)
 		<div class="bajar-item">
 			<h5>{{$estudio->titulo}}</h5>
-			<a href="#" class="bajar-link fa fa-chevron-right"></a>
-			<a href="#" class="bajar-ver fa fa-download"></a>
+			<a href="{{url('estudios/'.$estudio->id)}}" class="bajar-link fa fa-chevron-right"></a>
 		</div>
 		@endforeach
 	</div>
@@ -138,8 +127,7 @@
 		@foreach($infografias as $infografia)
 		<div class="bajar-item">
 			<h5>{{$infografia->titulo}}</h5>
-			<a href="#" class="bajar-link fa fa-chevron-right"></a>
-			<a href="#" class="bajar-ver fa fa-download"></a>
+			<a href="{{url('infografias/'.$infografia->id)}}" class="bajar-link fa fa-chevron-right"></a>
 		</div>
 		@endforeach
 	</div>

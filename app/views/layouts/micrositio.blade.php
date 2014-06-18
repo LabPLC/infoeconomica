@@ -28,11 +28,10 @@
     <div class="row">
       <div class="col-md-7">
         <h3 class="footer-title">infoeconomica.mx</h3>
-        <p>Introduccion aqui
-        </p>
+        <p>Es un portal que te permite conocer las estadísticas, indicadores y estudios económicos de la Ciudad de México.</p>
 
         <p class="pvl">
-          Logos
+          <img src="{{asset('neues/logos.png')}}" width="600" height="100">
         </p>
 
 
@@ -46,7 +45,6 @@
             <li>Reporte economico</li>
             <li>Laboratorio para la Ciudad</li>
           </ul>
-          <a href="#" target="_blank">Link</a>
         </div>
       </div>
     </div>
