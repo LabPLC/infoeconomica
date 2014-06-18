@@ -1,16 +1,16 @@
 @extends('layouts.micrositio')
 
 @section('contenido')
-
-<div class="titulo row-spacer">
+<div class="titulo">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6"><h2>Infograf&iacute;as</h2></div>
+			<div class="col-md-6"><h3>Infograf&iacute;as</h3></div>
 			<div class="col-md-6"></div>
 		</div>
 	</div>
 </div>
 
+<div class="main">
 <div class="container">
 
 <div class="row">
@@ -21,7 +21,7 @@
 	    	<div class="thumb">
 	    		<img src="{{asset('media/thumb_'.$infografia->attachment)}}" width="304" height="304">
 	    		<div class="overlay">
-	    			<a class="ver" href="{{url('infografias/'.$infografia->id)}}"><span class="glyphicon glyphicon-eye-open"></a>
+	    			<a class="ver" href="{{url('infografias/'.$infografia->id)}}"><span class="glyphicon glyphicon-eye-open"></span></a>
 	    		</div>
 	    	</div>
 	    	<div class="detalle">
@@ -34,6 +34,8 @@
 </div>
 
 </div>
+</span>
+
 @endsection
 
 

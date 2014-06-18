@@ -21,7 +21,9 @@ class HomeController extends BaseController {
 	}
 
 	public function index() {
-		return View::make('home');
+		$estudios = Post::where('tipo', '=', 1)->take(2)->get();
+		$infografias = Post::where('tipo', '=', 2)->take(2)->get();
+		return View::make('home',array('estudios'=>$estudios,'infografias'=>$infografias));
 	}
 
 	public function estudios() {

@@ -3,12 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Información Económica</title>
-	<link rel="stylesheet" type="text/css" href="{{asset('style-home/bootstrap.css')}}">
-  <link rel="stylesheet" type="text/css" href="{{asset('style-home/main.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('neues/bootstrap.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('neues/flat-ui.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('neues/main.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('neues/font-awesome/css/font-awesome.min.css')}}">
 	@yield('style')
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container container-fluid">
   	<div class="navbar-header">
      <a class="navbar-brand" href="{{url('/')}}">infoeconomica.mx</a> 
@@ -21,21 +23,35 @@
   </div>
 </nav>
 @yield('contenido')
-<div class="footer">
-  <div class="container footer-content">
+<footer>
+  <div class="container">
     <div class="row">
-      <div class="col-md-4">
-        <h3>infoeconomica.mx</h3>
-      </div>
-      <div class="col-md-4">
-        <div class="footer-info">
-        <p>Este micrositio es un esfuerzo del Laboratorio para la Ciudad en conjunto con la Secretaria de Desarrollo Economico del Distrito federal
+      <div class="col-md-7">
+        <h3 class="footer-title">infoeconomica.mx</h3>
+        <p>Introduccion aqui
         </p>
+
+        <p class="pvl">
+          Logos
+        </p>
+
+
+      </div> <!-- /col-md-7 -->
+
+      <div class="col-md-5">
+        <div class="footer-banner">
+          <h3 class="footer-title">Links de Interés</h3>
+          <ul>
+            <li>SEDECO</li>
+            <li>Reporte economico</li>
+            <li>Laboratorio para la Ciudad</li>
+          </ul>
+          <a href="#" target="_blank">Link</a>
+        </div>
       </div>
-      <div class="col-md-4"></div>
     </div>
   </div>
-</div>
+</footer>
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/bootstrap.js')}}"></script>
 @yield('extra-js')

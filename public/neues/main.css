@@ -1,13 +1,35 @@
-#sociedad .info {
-	background-color: #4775A3;
-}
-#economia .info {
-	background-color: #336699;
-}
 
 .info {
 	height: 180px;
+	padding: 15px;
+	background-color: #2C3E50;
 }
+
+.info h4, .info h5 {
+	padding: 0; margin: 0;
+}
+.info h4 {
+	color: #2ECC71;
+	font-weight: 600;
+	padding-top: 14px;
+	padding-bottom: 20px;
+	font-size: 36px;
+}
+.info h5 {
+	color: #16A085;
+	font-weight: 300;
+	padding-top: 14px;
+	font-size: 25px;
+}
+.info p {
+	color: #7F8C8D;
+	font-size: 14px;
+	font-weight: 300;
+	padding-top: 4px;
+	border-top: 1px solid #34495E;
+}
+
+
 .arriba-1 {
 	padding: 10px;
 }
@@ -15,14 +37,42 @@
 	height: 100px;
 }
 .bajar {
-	background-color: #3CB371;
-	padding: 10px 0px 10px 15px;
+	background-color: #95A5A6;
+	padding: 15px 15px;
 }
-.bajar h4 {;
+.bajar h5 {
+	color: #fff;
+	margin: 0;
+}
+
+.bajar-item {
+	background-color: #7F8C8D;
+	padding: 15px 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+.bajar-item .bajar-link, .bajar-item .bajar-ver  {
+	position: absolute;
+	top:0;
+	z-index: 99;
+	padding:15px;
 	color: #fff;
 }
-.footer {
-	height: 200px;
+.bajar-link { right: 0px; background-color: #1ABC9C;}
+.bajar-ver { right: 42px; background-color: #7F8C8D !important;}
+
+.bajar-item h5 {
+	font-size:16px;
+	color: #fff;
+	margin: 0;
+}
+
+
+
+footer {
+	margin-top: 80px;
+	background-color: #fff;
 }
 .row-spacer {
 	margin-bottom: 35px;
@@ -46,7 +96,7 @@
 para el estilo del item
 */
 .post-item{
-	background-color: #3b8dbd;
+	background-color: #2C3E50;
 	position: relative;
 	margin-bottom: 30px;
 	overflow: hidden;
@@ -59,14 +109,16 @@ para el estilo del item
 	color: #fff;
 }
 .post-item .detalle h4 {
-	color: #fff;
+	color: #1ABC9C;
+	font-size: 19px;
+	font-weight: 300;
 }
 
 .post-item .overlay {
 	display: none;
 	font-size: 25pt;
 	z-index: 999;
-	background-color: #82b964;
+	background-color: #16A085;
 	position: absolute;
 	top:0; left: 0;
 	width: 304px;
@@ -145,6 +197,19 @@ body {
 
 .main {
 	padding-top: 30px;
+}
+
+.actions {
+	overflow: hidden;
+}
+.social {
+	padding: 15px;
+	font-size: 35px;
+	background-color: #2980B9;
+	color: #fff;
+}
+.social a, .social a:hover {
+	color: #fff;	
 }
 
 

@@ -1,16 +1,16 @@
 @extends('layouts.micrositio')
 
 @section('contenido')
-
-<div class="titulo row-spacer">
+<div class="titulo">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6"><h2>Estudios y An&aacute;lisis</h2></div>
+			<div class="col-md-6"><h3>Estudios y An&aacute;lisis</h3></div>
 			<div class="col-md-6"></div>
 		</div>
 	</div>
 </div>
 
+<div class="main">
 <div class="container">
 
 <div class="row">
@@ -19,10 +19,10 @@
 	<div class="col-md-4">
 	    <div class="post-item">
 	    	<div class="overlay-estudios">
-	    			<a class="ver" href="{{asset('media/'.$estudio->attachment)}}" target="new"><span class="glyphicon glyphicon-cloud-download"></a>
+	    			<a class="ver" href="{{asset('media/'.$estudio->attachment)}}" target="new"><span class="glyphicon glyphicon-cloud-download"></span></a>
 	    		</div>
 	    	<div class="detalle-estudios">
-	        	<h4 class="text-center">{{$estudio->titulo}}</h4>
+	        	<h3 class="text-center">{{$estudio->titulo}}</h3>
 	        </div>
 	    </div>
 	</div>
@@ -31,6 +31,7 @@
 </div>
 
 
+</div>
 </div>
 @endsection
 
