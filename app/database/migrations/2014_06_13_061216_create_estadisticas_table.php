@@ -24,7 +24,6 @@ class CreateEstadisticasTable extends Migration {
 		});
 	}
 
-
 	/**
 	 * Reverse the migrations.
 	 *

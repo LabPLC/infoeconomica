@@ -8,7 +8,7 @@
 <div class="container">
 
 <div class="row row-spacer">
-	<h3 class="text-center">Estadísticas de la Ciudad</h3>
+	<h3 class="text-center">Estadísticas de la Ciudad de México</h3>
 </div>
 <div class="row row-spacer">
 	<div class="col-md-12">
@@ -25,14 +25,14 @@
 		  	<div class="row">
 		  		<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
-						<h4 class="text-center">9,234,098</h4>
-						<p class="text-center">texto adicional</p>
+						<h5 class="text-center">Población del DF</h5>
+						<h4 class="text-center">8,851,080</h4>
+						<p class="text-center">2010 - INEGI</p>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
-						<h5 class="text-center">titiulo</h5>
+						<h5 class="text-center">Población Economicamente Activa</h5>
 						<h4 class="text-center">9,234,098</h4>
 						<p class="text-center">texto adicional</p>
 					</div>

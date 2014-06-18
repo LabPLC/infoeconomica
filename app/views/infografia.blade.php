@@ -4,7 +4,7 @@
 <div class="titulo">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6"><h3>{{$infografia->titulo}}</h3></div>
+			<div class="col-md-6"><h4>{{$infografia->titulo}}</h4></div>
 			<div class="col-md-6"></div>
 		</div>
 	</div>
@@ -23,6 +23,3 @@
 </div>
 </div>
 @endsection
-
-
-

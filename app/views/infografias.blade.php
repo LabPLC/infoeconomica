@@ -4,7 +4,7 @@
 <div class="titulo">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6"><h3>Infograf&iacute;as</h3></div>
+			<div class="col-md-6"><h4>Infograf&iacute;as</h4></div>
 			<div class="col-md-6"></div>
 		</div>
 	</div>
@@ -34,7 +34,7 @@
 </div>
 
 </div>
-</span>
+</div>
 
 @endsection
 

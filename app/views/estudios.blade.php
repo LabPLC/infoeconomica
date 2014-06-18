@@ -4,7 +4,7 @@
 <div class="titulo">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6"><h3>Estudios y An&aacute;lisis</h3></div>
+			<div class="col-md-6"><h4>Estudios y An&aacute;lisis</h4></div>
 			<div class="col-md-6"></div>
 		</div>
 	</div>

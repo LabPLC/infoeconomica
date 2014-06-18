@@ -18,8 +18,7 @@
 .info h5 {
 	color: #16A085;
 	font-weight: 300;
-	padding-top: 14px;
-	font-size: 25px;
+	font-size: 1em;
 }
 .info p {
 	color: #7F8C8D;
@@ -28,7 +27,6 @@
 	padding-top: 4px;
 	border-top: 1px solid #34495E;
 }
-
 
 .arriba-1 {
 	padding: 10px;
@@ -67,8 +65,6 @@
 	color: #fff;
 	margin: 0;
 }
-
-
 
 footer {
 	margin-top: 80px;
@@ -175,11 +171,15 @@ para el estilo del item
 }
 
 .titulo {
-	padding-top:5px;
-	padding-bottom: 25px;
-	border-bottom: 1px solid #eee;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #BDC3C7;
 	color: #22B35A;
 	background-color: #fff;
+}
+.titulo h4 {
+	padding: 0;
+	margin: 0;
 }
 
 .footer-content {
@@ -208,8 +208,9 @@ body {
 	background-color: #2980B9;
 	color: #fff;
 }
-.social a, .social a:hover {
-	color: #fff;	
+.social:hover {
+	color: #fff;
+	background-color: #3498DB;
 }
 
 
