@@ -47,7 +47,13 @@
 	padding: 10px;
 }
 .headersote{
-	height: 100px;
+	height: 200px;
+	background: url(/neues/fondo.jpg) no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-position: 0px -200px;
 }
 .bajar {
 	background-color: #95A5A6;
@@ -261,4 +267,3 @@ body {
 	border: 1px solid #1ABC9C;
 	color: #fff;
 }
-
