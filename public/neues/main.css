@@ -225,17 +225,18 @@ body {
 }
 
 .actions {
-	overflow: hidden;
+	margin-top: 25px;
 }
 .social {
 	padding: 15px;
-	font-size: 35px;
-	background-color: #2980B9;
+	font-size: 20px;
+	background-color: #27AE60;
 	color: #fff;
+	font-weight: 300;
 }
 .social:hover {
 	color: #fff;
-	background-color: #3498DB;
+	background-color: #2ECC71;
 }
 
 .spacer-2x {
