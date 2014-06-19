@@ -1,8 +1,9 @@
 <!doctype html>
-<html lang="es_MX">
+<html lang="es_MX" prefix="og: http://ogp.me/ns#">
 <head>
 	<meta charset="UTF-8">
 	<title>Información Económica</title>
+  @yield('extra-meta')
 	<link rel="stylesheet" type="text/css" href="{{asset('neues/bootstrap.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('neues/flat-ui.css')}}">
   <link rel="stylesheet" type="text/css" href="{{asset('neues/main.css')}}">
