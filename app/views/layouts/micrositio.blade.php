@@ -41,9 +41,11 @@
         <div class="footer-banner">
           <h3 class="footer-title">Links de Interés</h3>
           <ul>
-            <li>SEDECO</li>
-            <li>Reporte economico</li>
-            <li>Laboratorio para la Ciudad</li>
+            <li><a href="http://www.sedecodf.gob.mx" target="new">Secretaría de Desarrrollo Económico</a></li>
+            <li><a href="http://reporteeconomico.sedecodf.gob.mx" target="new">Reporte Económico de la Ciudad</a></li>
+            <li><a href="http://codigo.labplc.mx" target="new">Código CDMX</a></li>
+            <li><a href="http://www.labplc.mx" target="new">Laboratorio para la Ciudad</a></li>
+            <li><a href="http://www.inegi.gob.mx" target="new">INEGI</a></li>
           </ul>
         </div>
       </div>

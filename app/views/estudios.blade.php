@@ -17,12 +17,13 @@
 	@foreach($estudios as $estudio)
 	<!-- item -->
 	<div class="col-md-4">
-	    <div class="post-item">
-	    	<div class="overlay-estudios">
-	    			<a class="ver" href="{{asset('media/'.$estudio->attachment)}}" target="new"><span class="glyphicon glyphicon-cloud-download"></span></a>
-	    		</div>
+	    <div class="estudios">
 	    	<div class="detalle-estudios">
-	        	<h3 class="text-center">{{$estudio->titulo}}</h3>
+	        	<h4 class="text-center">{{$estudio->titulo}}</h4>
+	        </div>
+	        <div class="link-estudios" align="right">
+	        	<!-- <a href="#" class="text-center"><span class="fa fa-cloud-download"></span></a> -->
+	        	<a href="{{url('media/'.$estudio->attachment)}}" target="new" class="text-center"><span class="fa fa-chevron-right"></span></a>
 	        </div>
 	    </div>
 	</div>

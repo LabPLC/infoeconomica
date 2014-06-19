@@ -16,16 +16,26 @@
 .info h4 {
 	color: #2ECC71;
 	font-weight: 600;
-	padding-top: 14px;
-	padding-bottom: 20px;
-	font-size: 36px;
+	padding: 10px 0;
+	font-size: 38px;
+	position: absolute;
+	width: 100%;
+	bottom: 68px;
+	left: 0;
 }
 .info h5 {
 	color: #16A085;
 	font-weight: 300;
 	font-size: 1em;
 }
-.info p {
+.info .abajo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 5px 30px;
+}
+.abajo p {
 	color: #7F8C8D;
 	font-size: 14px;
 	font-weight: 300;
@@ -111,7 +121,7 @@ para el estilo del item
 	color: #fff;
 }
 .post-item .detalle h4 {
-	color: #1ABC9C;
+	color: #fff;
 	font-size: 19px;
 	font-weight: 300;
 }
@@ -126,31 +136,37 @@ para el estilo del item
 	width: 304px;
 	height: 304px;
 }
-.post-item .detalle-estudios {
-	padding: 18px;
+
+.estudios {
+	background-color: #2C3E50;
+	position: relative;
+	margin-bottom: 30px;
+	overflow: hidden;
+	padding: 20px;
+	height: 160px;
 }
-.post-item .detalle-estudios h4 {
+.detalle-estudios h4 {
 	color: #fff;
+	font-size: 18px;
+	padding:0;
+	margin: 0;
+	font-weight: 300;
 }
-.post-item .overlay-estudios {
-	display: none;
-	font-size: 25pt;
-	z-index: 999;
-	background-color: #82b964;
+.link-estudios {
 	position: absolute;
-	top:0; left: 0;
-	width: 304px;
-	height: 100px;
-}
-.post-item .overlay-estudios .ver {
-	position: absolute;
-	top:10px;
-	left:130px;
-	font-size: 40pt;
+	bottom: 0;
+	right: 0;
+	background-color: #16A085;
 	color: #fff;
+	width: 100%;
 }
-.post-item .overlay-estudios .ver:hover {
-	color: #eee;
+.link-estudios:hover {
+	background-color: #1ABC9C;
+}
+.link-estudios a {
+	color: #fff;
+	padding: 12px;
+	font-size: 25px;
 }
 
 .post-item .overlay .ver {
@@ -196,6 +212,9 @@ para el estilo del item
 	padding: 25px;
 	font-size: 10px;
 }
+footer a {
+	font-weight: 500 !important;
+}
 
 body {
 	    background-color: #ebedef !important;
@@ -225,4 +244,20 @@ body {
 
 
 /* para los indicadores, diferentes estilos */
+.nav-tabs {
+	border-bottom: 1px solid #1ABC9C;
+}
+.nav-tabs > li > a {
+	border-radius: 0 !important;
+}
+.nav-tabs > li > a:hover {
+  border-color: #16A085 #16A085 #16A085;
+  background-color: #16A085;
+  color: #fff;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color: #1ABC9C;
+	border: 1px solid #1ABC9C;
+	color: #fff;
+}
 

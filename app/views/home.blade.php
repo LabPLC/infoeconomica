@@ -27,35 +27,35 @@
 					<div class="info">
 						<h5 class="text-center">Población del DF</h5>
 						<h4 class="text-center">8,851,080</h4>
-						<p class="text-center">2010 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2010 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">Población Economicamente Activa</h5>
 						<h4 class="text-center">4,414,063</h4>
-						<p class="text-center">2013 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2013 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">Población Ocupada en el DF</h5>
 						<h4 class="text-center">4,142,343</h4>
-						<p class="text-center">2013 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2013 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">Indice de Desarrollo Humano</h5>
 						<h4 class="text-center">0.91</h4>
-						<p class="text-center">Promedio, 2010 - PNUD</p>
+						<div class="abajo" align="center"><p class="text-center">Promedio, 2010 - PNUD</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">ITPL</h5>
 						<h4 class="text-center">1.22</h4>
-						<p class="text-center">2013 - CONEVAL</p>
+						<div class="abajo" align="center"><p class="text-center">2013 - CONEVAL</p></div>
 					</div>
 				</div>
 		  	</div>
@@ -66,21 +66,21 @@
 					<div class="info">
 						<h5 class="text-center">Producto Interno Bruto</h5>
 						<h4 class="text-center">2.2</h4>
-						<p class="text-center">2012 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2012 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">Formación Bruta de Capital Fijo</h5>
 						<h4 class="text-center">106,472,653</h4>
-						<p class="text-center">2009 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2009 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
 					<div class="info">
 						<h5 class="text-center">Exportaciones Totales</h5>
 						<h4 class="text-center">2,982,812</h4>
-						<p class="text-center">2012 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2012 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
@@ -91,7 +91,7 @@
 					<div class="info">
 						<h5 class="text-center">Unidades Económicas</h5>
 						<h4 class="text-center">428,756</h4>
-						<p class="text-center">2013 - INEGI</p>
+						<div class="abajo" align="center"><p class="text-center">2013 - INEGI</p></div>
 					</div>
 				</div>
 				<div class="col-md-4 arriba-1">
@@ -116,7 +116,7 @@
 		@foreach($estudios as $estudio)
 		<div class="bajar-item">
 			<h5>{{$estudio->titulo}}</h5>
-			<a href="{{url('estudios/'.$estudio->id)}}" class="bajar-link fa fa-chevron-right"></a>
+			<a href="{{url('media/'.$estudio->attachment)}}" target="new" class="bajar-link fa fa-chevron-right"></a>
 		</div>
 		@endforeach
 	</div>
