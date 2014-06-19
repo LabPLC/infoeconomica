@@ -48,6 +48,7 @@
             <li><a href="http://www.labplc.mx" target="new">Laboratorio para la Ciudad</a></li>
             <li><a href="http://www.inegi.gob.mx" target="new">INEGI</a></li>
           </ul>
+          <a href="https://github.com/LabPLC/infoeconomica/" target="new"><span class="fa fa-github fa-2x"></span> GitHub</a>
         </div>
       </div>
     </div>

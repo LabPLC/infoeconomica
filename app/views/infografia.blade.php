@@ -24,7 +24,7 @@
 	<img src="{{asset('media/'.$infografia->attachment)}}">
 </div>
 <div class="row row-spacer actions" align="right">
-	<!--<a class="social" href="#"><span class="fa fa-facebook-square"></span></a>-->
+	<a class="social" href="{{asset('media/full_'.$infografia->attachment)}}" target="new"><span class="fa fa-arrows-alt"></span> Expandir</a>
 </div>
 
 </div>
