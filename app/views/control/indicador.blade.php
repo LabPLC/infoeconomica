@@ -110,7 +110,7 @@
                     </div>
                     <div class="col-md-12">
                         <hr>
-                        <h1><a data="{{$indicador->id}}" href="/indicadores/descarga/{{$indicador->clave}}.csv" target="_new" class="descargar-indicador btn btn-primary btn-md">
+                        <h1><a data="{{$indicador->id}}" href="{{url('descarga/'.$indicador->clave)}}.csv" target="_new" class="descargar-indicador btn btn-primary btn-md">
                                         <span class="glyphicon glyphicon-cloud-download"></span> Descargar CSV
                                         </a></h1>
                     </div>
@@ -169,7 +169,7 @@ function eliminar_muestra(id) {
 
             //ajax call
             $.ajax({
-                url : '{{url('/')}}/muestra_delete',
+                url : '{{url('control/muestra_delete')}}',
                 method : 'post',
                 data : postData,
                 success : function(response) {

@@ -33,7 +33,7 @@
 			                        <td><button data="{{$indicador->id}}" type="button" class="eliminar-indicador btn btn-danger btn-xs">
   										<span class="glyphicon glyphicon-remove"></span> Eliminar
 										</button>
-										<a data="{{$indicador->id}}" href="{{url('/')}}/descarga/{{$indicador->clave}}.csv" target="_new" class="descargar-indicador btn btn-primary btn-xs">
+										<a data="{{$indicador->id}}" href="{{url('descarga/'.$indicador->clave.'.csv')}}" target="_new" class="descargar-indicador btn btn-primary btn-xs">
   										<span class="glyphicon glyphicon-cloud-download"></span> CSV
 										</a>
 									</td>
@@ -67,11 +67,11 @@ function eliminar_indicador(id) {
 
             //ajax call
             $.ajax({
-                url : '{{url('/')}}/delete',
+                url : '{{url('control/almacen/delete')}}',
                 method : 'post',
                 data : postData,
                 success : function(response) {
-                    document.location = '{{url('/')}}'
+                    document.location = '{{url('control')}}'
                 },
                 error : function() {
                     console.log('Error Ajax');

@@ -54,10 +54,12 @@ Route::group(array('before' => 'auth'), function()
 
 	//### Almacen de Indicadores ### 
 	Route::get('control/almacen', array('as'=>'control','uses'=>'IndicadorController@index'));
-	Route::get('control/almacen/nuevo', array('uses'=>'IndicadorController@create'));
-	Route::get('control/almacen/{clave}', 'IndicadorController@show')->where('clave', '[A-Za-z0-9\_]+');
 	Route::post('control/almacen', array('uses'=>'IndicadorController@store'));
+	Route::get('control/almacen/nuevo', array('uses'=>'IndicadorController@create'));
+	Route::post('control/almacen/delete', 'IndicadorController@eliminar');
 	Route::post('control/almacen/muestras', 'IndicadorController@insert_muestra');
+	Route::get('control/almacen/{clave}', 'IndicadorController@show')->where('clave', '[A-Za-z0-9\_]+');
+	
 
 	//### Estadisticas
 	Route::get('control/estadisticas',function(){
@@ -79,8 +81,7 @@ Route::group(array('before' => 'auth'), function()
 
 	
 
-	//eliminar un indicador
-	Route::post('control/delete', 'IndicadorController@eliminar');
+	
 
 	//eliminar una muestra
 	Route::post('control/muestra_delete', 'IndicadorController@eliminar_muestra');
