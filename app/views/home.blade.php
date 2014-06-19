@@ -106,7 +106,7 @@
 	</div>
 </div>
 <div class="row spacer-2x">
-	<a class="btn btn-hg btn-embossed btn-primary col-md-12" href="{{url('media/datos.xlsx')}}">Descargar todos los datos</a>
+	<a class="btn btn-hg btn-embossed btn-primary col-md-12" href="{{asset('media/datos.zip')}}" target="new">Descargar todos los datos</a>
 </div>
 <div class="row">
 	<div class="col-md-6 arriba-1">
