@@ -1,5 +1,12 @@
 @extends('layouts.micrositio')
 
+@section('extra-meta')
+<meta property="og:title" content="{{$infografia->titulo}}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{url('infografias/'.$infografia->id)}}/" />
+<meta property="og:image" content="{{asset('media/thumb_'.$infografia->attachment)}}" />
+@stop
+
 @section('contenido')
 <div class="titulo">
 	<div class="container">
@@ -17,7 +24,7 @@
 	<img src="{{asset('media/'.$infografia->attachment)}}">
 </div>
 <div class="row row-spacer actions" align="right">
-	<a class="social" href="#"><span class="fa fa-facebook-square"></span></a>
+	<!--<a class="social" href="#"><span class="fa fa-facebook-square"></span></a>-->
 </div>
 
 </div>
