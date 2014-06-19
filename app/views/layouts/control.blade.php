@@ -34,7 +34,6 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">infoeconomica.mx</li>
                 <li><a href="<?php print(url('control/almacen')); ?>">Almacen de Indicadores</a></li>
-                <li><a href="<?php print(url('control/estadisticas')); ?>">Estadisticas</a></li>
                 <li><a href="<?php print(url('control/estudios')); ?>">Estudios y Analisis</a></li>
                 <li><a href="<?php print(url('control/infografias')); ?>">Infografias</a></li>
                 <li><a href="<?php print(url('control/logout'));?>">Salir</a></li>

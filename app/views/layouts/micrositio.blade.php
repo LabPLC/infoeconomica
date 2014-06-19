@@ -35,7 +35,6 @@
           <img src="{{asset('neues/logos.png')}}" width="600" height="100">
         </p>
 
-
       </div> <!-- /col-md-7 -->
 
       <div class="col-md-5">
