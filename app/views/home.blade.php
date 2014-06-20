@@ -1,8 +1,6 @@
 @extends('layouts.micrositio')
 
 @section('contenido')
-<div class="headersote"></div>
-
 <div id="main">
 
 <div class="container">
